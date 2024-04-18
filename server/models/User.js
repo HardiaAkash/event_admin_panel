@@ -44,6 +44,18 @@ const UserSchema = new mongoose.Schema(
     activeToken: {
       type: String
     },
+    isConfirmed:{
+      type:Boolean,
+      default:true
+    },
+    appleId:{
+      type:String,
+      default:null
+    },
+    confirmationToken: {
+      type: String,
+      default:null
+    },
     favoriteEvents: [
       {
         type: mongoose.Schema.Types.ObjectId,

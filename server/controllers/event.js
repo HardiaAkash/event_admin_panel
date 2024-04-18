@@ -116,6 +116,7 @@ exports.getEvent = asyncHandler(async (req, res) => {
   const getEvent = await Event.findById(id)
     .populate("category")
     .populate("subCategory");
+    console.log(getEvent);
   res.json(getEvent);
 });
 

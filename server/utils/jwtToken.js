@@ -1,6 +1,6 @@
 // Create Token and saving in cookie
 
-const sendToken = (user, statusCode, res) => {
+const sendToken = (user, statusCode, res, isMail) => {
   const token = user.getSignedToken();
 
   // options for cookie
@@ -14,6 +14,7 @@ const sendToken = (user, statusCode, res) => {
     success: true,
     user,
     token,
+    isMail,
   });
 };
 

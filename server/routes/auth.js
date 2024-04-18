@@ -16,7 +16,8 @@ const {
   updatePassword,
   fetchEvent,
   uploadImage,
-  verifyUser
+  verifyUser,
+  confirmUser
 } = require("../controllers/auth");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 const storage = multer.memoryStorage();
@@ -34,7 +35,8 @@ router.route("/verifyUserToken/:token").get(verifyUser)
 
 // Create User
 router.route("/register").post(register);
-
+//
+router.route("/confirm/:token").get(confirmUser)
 // Update User Password
 router.post("/updatePassword", isAuthenticatedUser, updatePassword);
 
